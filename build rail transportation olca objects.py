@@ -276,7 +276,11 @@ def extract_latest_zip(
 
 zip_path = working_dir / "src/flcac-utils/output"
 
-extract_latest_zip(zip_path, working_dir, 'output_11_13_v0')
+
+output_name = 'output_date_version' #customize with every run
+
+
+extract_latest_zip(zip_path, working_dir, output_name)
 
 print('done')
 
