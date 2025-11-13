@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "c808ca2f-af2f-3589-ad26-eb6e32fc07e9",
+  "category": "placeholder",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2025-11-07T12:00:00Z",
+  "name": "Natural Gas Combustion, Internal Combustion Engines, Industrial, Natural Gas, Reciprocating:Cogeneration, SNCR",
+  "version": "01.00.000"
+}

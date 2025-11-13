@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "340ec3e1-cb56-3e14-b887-17fc17777389",
+  "category": "placeholder",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2025-11-07T12:00:00Z",
+  "name": "Natural Gas Combustion, Internal Combustion Engines, Electric Generation, Natural Gas, Turbine, SNCR",
+  "version": "01.00.000"
+}

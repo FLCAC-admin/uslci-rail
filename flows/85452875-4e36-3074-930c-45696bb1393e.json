@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "85452875-4e36-3074-930c-45696bb1393e",
+  "category": "placeholder",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2025-11-07T12:00:00Z",
+  "name": "Kerosene Combustion, Turbine, Electric Generation, SCR",
+  "version": "01.00.000"
+}

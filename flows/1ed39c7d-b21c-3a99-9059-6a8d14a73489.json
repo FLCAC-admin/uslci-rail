@@ -1,0 +1,24 @@
+{
+  "@type": "Flow",
+  "@id": "1ed39c7d-b21c-3a99-9059-6a8d14a73489",
+  "cas": "78-84-2",
+  "category": "Elementary flows/emission/air",
+  "description": "From Federal Elementary Flow List v1.3.0, written by fedelemflowlist v1.3.2. Flow Class: Chemicals. Not a preferred flow.",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "ELEMENTARY_FLOW",
+  "formula": "C4H8O",
+  "lastChange": "2025-11-07T14:33:37.896321",
+  "name": "Isobutyraldehyde",
+  "synonyms": "2-Methylpropanal; Propanal, 2-methyl-",
+  "version": "1.3.0"
+}

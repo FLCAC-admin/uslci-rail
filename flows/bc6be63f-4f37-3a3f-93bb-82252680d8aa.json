@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "bc6be63f-4f37-3a3f-93bb-82252680d8aa",
+  "category": "placeholder",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2025-11-07T12:00:00Z",
+  "name": "Natural Gas Combustion, External Combustion Boilers, Electric Generation, Natural Gas, Boilers > 100 Million Btu/hr except Tangential, Uncontrolled, Post NSPS Boiler",
+  "version": "01.00.000"
+}

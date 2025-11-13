@@ -1,0 +1,11 @@
+{
+  "@type": "Source",
+  "@id": "32d2f12b-887f-3bbd-aacc-25d31386be5e",
+  "description": "U.S. Environmental Protection Agency, Emission factors for greenhouse gas inventories, 2011",
+  "lastChange": "2025-11-07T12:00:00Z",
+  "name": "Emission factors for greenhouse gas inventories",
+  "textReference": "",
+  "url": "http://www.epa.gov/climateleadership/inventory/ghg-emissions.html",
+  "version": "00.00.001",
+  "year": "2011"
+}

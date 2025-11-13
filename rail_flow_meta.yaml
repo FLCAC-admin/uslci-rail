@@ -1,0 +1,129 @@
+Years:
+  - 2020 # how to handle multiple data sources with different years
+
+## Flow mapping
+# add documentation about fedefl and uslci
+Flows:
+  diesel: 
+    ProcessName: Petroleum refining, at refinery  #is diesel at refinery the best choice here? 
+    DefaultProviderUUID: 0aaf1e13-5d80-37f9-b7bb-81a6b8965c71
+    FlowName: Diesel, at refinery
+    FlowUUID: d939590b-a0d7-310c-8952-9921ed64a078
+  methane: 
+    ProcessName: #no provider
+    DefaultProviderUUID: #no provider
+    FlowName: Methane
+    FlowUUID: aab83476-ec6c-3742-af85-15d320b7ce80
+  carbon monoxide: 
+    ProcessName:  #no provider
+    DefaultProviderUUID:  #no provider
+    FlowName: Carbon monoxide
+    FlowUUID: 187c525c-3715-388c-b303-a0671524a615
+  carbon dioxide:
+    ProcessName: #no provider
+    DefaultProviderUUID: #no provider
+    FlowName: Carbon dioxide
+    FlowUUID: b6f010fb-a764-3063-af2d-bcb8309a97b7
+  nitrous oxide:
+    ProcessName: #no provider
+    DefaultProviderUUID: #no provider
+    FlowName: Nitrous oxide
+    FlowUUID: cfee0524-7ad6-300b-b050-6249135a2492
+  nitrous oxides:
+    ProcessName: #no provider
+    DefaultProviderUUID: #no provider
+    FlowName: Nitrous oxide
+    FlowUUID: cfee0524-7ad6-300b-b050-6249135a2492
+  ammonia:
+    ProcessName: #no provider
+    DefaultProviderUUID: #no provider
+    FlowName: Ammonia
+    FlowUUID: 65b5d5dd-95b5-36b2-8cb0-7c5501ff1e32
+  PM10:
+    ProcessName: #no provider
+    DefaultProviderUUID: #no provider
+    FlowName: Particulate matter, > 2.5μm and ≤ 10μm
+    FlowUUID: a320e284-d276-3167-89b3-19d790081c08
+  PM25:
+    ProcessName: #no provider
+    DefaultProviderUUID: #no provider
+    FlowName: Particulate matter, > 10μm
+    FlowUUID: a7eb485a-5288-3bb8-aad2-ce1992ec92b8
+  sulfur dioxide:
+    ProcessName: #no provider
+    DefaultProviderUUID: #no provider
+    FlowName: Sulfur dioxide
+    FlowUUID: f4973035-59f5-3bdc-b257-b274dcc04e0f
+  volatile organic compounds:
+    ProcessName: #no provider
+    DefaultProviderUUID: #no provider
+    FlowName: Volatile organic compounds
+    FlowUUID: 6f861846-1c4c-3fc9-a198-56b2d9abd83b
+DQI:
+  dqSystem:
+    Process:
+      Federal LCA Commons Core Database: 'US EPA - Process Pedigree Matrix'
+    Flow:
+      Federal LCA Commons Core Database: 'US EPA - Flow Pedigree Matrix' 
+  Process:
+    Process review:
+      score: 4
+      description: > 
+        No documentation of a third party review.
+    Process completeness:
+      score: 1
+      description: 
+        All flows have been evaluated and given a value.
+
+    # # EPA DQI category
+    # Range data completeness:
+    #   score: 5
+    #   description: No range data provided for flows.
+
+    # # EPA DQA Data Attributes
+    # Reproducibility:
+    #   score: 2
+    #   description: >
+    #     Code and calculations are fully transparent based on a public data
+    #     source. But the modeling of the data source is not transparent.
+
+    # Free to use:
+    #   score: 1
+    #   description: Data are made available on the FLCAC.
+
+    # Interoperable:
+    #   score: 1
+    #   description: Intended for use with the U.S. Electricity Baseline (FLCAC).
+
+    # Maintained:
+    #   score: 1
+    #   description: Data will be reproduced annually.
+
+  Flow:
+    Flow reliability:
+      score: 2
+      description: >
+        Data collected from Class 1 Line Haul railroad fuel usage reports (STB R-1). Weighted EFs per pollutant for each gallon of fuel used were calcualted per the method described in the 2020 National Emissions Inventory Locomotive Methodology
+    Temporal correlation:
+      score: 2
+      description: 
+        Data was collected in 2020. At the time of publication of this dataset (Q4, 2025) the data is 5 years old.
+    Geographical correlation:
+      score: 1
+      description: 
+        Data is representative of average US railroad operations.
+
+    Technological correlation:
+      score: 1
+      description: 
+        All technolgoies are categorically equivalent.
+    Data collection methods:
+      score: 1
+      description: >
+        Data represents an average of all Class 1 Line Haul railroads in the US, in the year 2020. 
+  Review:
+  review_type: 'Dependent internal review'
+  reviewers:
+    - USLCI: 'Franklin Associates, A Division of ERG'
+  details: >
+    details of review performed go here

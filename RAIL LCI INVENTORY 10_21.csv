@@ -1,0 +1,122 @@
+tier,data name,amount,unit
+0,diesel,0.001170413,gal (US fl)
+0,methane,9.3633E-07,kg
+0,carbon monoxide,3.11611E-05,kg
+0,carbon dioxide,0.011879687,kg
+0,nitrous oxide,3.04307E-07,kg
+0,ammonia,9.74954E-08,kg
+0,nitrous oxides,0.000209363,kg
+0,PM10,7.55656E-06,kg
+0,PM25,7.55656E-06,kg
+0,sulfur dioxide,1.09902E-07,kg
+0,volatile organic compounds,1.23028E-05,kg
+0+,diesel,0.001170413,gal (US fl)
+0+,methane,9.3633E-07,kg
+0+,carbon monoxide,3.11611E-05,kg
+0+,carbon dioxide,0.011879687,kg
+0+,nitrous oxide,3.04307E-07,kg
+0+,ammonia,9.74954E-08,kg
+0+,nitrous oxides,0.000175281,kg
+0+,PM10,4.86892E-06,kg
+0+,PM25,4.72285E-06,kg
+0+,sulfur dioxide,1.09902E-07,kg
+0+,volatile organic compounds,7.69045E-06,kg
+1,diesel,0.001170413,gal (US fl)
+1,methane,9.3633E-07,kg
+1,carbon monoxide,3.11611E-05,kg
+1,carbon dioxide,0.011879687,kg
+1,nitrous oxide,3.04307E-07,kg
+1,ammonia,9.74954E-08,kg
+1,nitrous oxides,0.000163109,kg
+1,PM10,7.55656E-06,kg
+1,PM25,7.55656E-06,kg
+1,sulfur dioxide,1.09902E-07,kg
+1,volatile organic compounds,1.20484E-05,kg
+1+,diesel,0.001170413,gal (US fl)
+1+,methane,9.3633E-07,kg
+1+,carbon monoxide,3.11611E-05,kg
+1+,carbon dioxide,0.011879687,kg
+1+,nitrous oxide,3.04307E-07,kg
+1+,ammonia,9.74954E-08,kg
+1+,nitrous oxides,0.000163109,kg
+1+,PM10,4.86892E-06,kg
+1+,PM25,4.72285E-06,kg
+1+,sulfur dioxide,1.09902E-07,kg
+1+,volatile organic compounds,7.4341E-06,kg
+2,diesel,0.001170413,gal (US fl)
+2,methane,9.3633E-07,kg
+2,carbon monoxide,3.11611E-05,kg
+2,carbon dioxide,0.011879687,kg
+2,nitrous oxide,3.04307E-07,kg
+2,ammonia,9.74954E-08,kg
+2,nitrous oxides,0.000120506,kg
+2,PM10,4.38202E-06,kg
+2,PM25,4.25056E-06,kg
+2,sulfur dioxide,1.09902E-07,kg
+2,volatile organic compounds,6.66506E-06,kg
+2+,diesel,0.001170413,gal (US fl)
+2+,methane,9.3633E-07,kg
+2+,carbon monoxide,3.11611E-05,kg
+2+,carbon dioxide,0.011879687,kg
+2+,nitrous oxide,3.04307E-07,kg
+2+,ammonia,9.74954E-08,kg
+2+,nitrous oxides,0.000120506,kg
+2+,PM10,1.94757E-06,kg
+2+,PM25,1.88914E-06,kg
+2+,sulfur dioxide,1.09902E-07,kg
+2+,volatile organic compounds,3.33253E-06,kg
+3,diesel,0.001170413,gal (US fl)
+3,methane,9.3633E-07,kg
+3,carbon monoxide,3.11611E-05,kg
+3,carbon dioxide,0.011879687,kg
+3,nitrous oxide,3.04307E-07,kg
+3,ammonia,9.74954E-08,kg
+3,nitrous oxides,0.000120506,kg
+3,PM10,1.94757E-06,kg
+3,PM25,1.88914E-06,kg
+3,sulfur dioxide,1.09902E-07,kg
+3,volatile organic compounds,3.33253E-06,kg
+4,diesel,0.001170413,gal (US fl)
+4,methane,1.50688E-06,kg
+4,carbon monoxide,5.01489E-05,kg
+4,carbon dioxide,0.019118509,kg
+4,nitrous oxide,4.89735E-07,kg
+4,ammonia,1.56904E-07,kg
+4,nitrous oxides,3.91788E-05,kg
+4,PM10,5.87682E-07,kg
+4,PM25,5.70052E-07,kg
+4,sulfur dioxide,1.7687E-07,kg
+4,volatile organic compounds,1.65021E-06,kg
+4C,diesel,0.001170413,gal (US fl)
+4C,methane,9.3633E-07,kg
+4C,carbon monoxide,3.11611E-05,kg
+4C,carbon dioxide,0.011879687,kg
+4C,nitrous oxide,3.04307E-07,kg
+4C,ammonia,9.74954E-08,kg
+4C,nitrous oxides,0.000120506,kg
+4C,PM10,1.94757E-06,kg
+4C,PM25,1.88914E-06,kg
+4C,sulfur dioxide,1.09902E-07,kg
+4C,volatile organic compounds,3.33253E-06,kg
+No Emissions Control,diesel,0.001170413,gal (US fl)
+No Emissions Control,methane,9.3633E-07,kg
+No Emissions Control,carbon monoxide,3.11611E-05,kg
+No Emissions Control,carbon dioxide,0.011879687,kg
+No Emissions Control,nitrous oxide,3.04307E-07,kg
+No Emissions Control,ammonia,9.74954E-08,kg
+No Emissions Control,nitrous oxides,0.00031648,kg
+No Emissions Control,PM10,7.79027E-06,kg
+No Emissions Control,PM25,7.55656E-06,kg
+No Emissions Control,sulfur dioxide,1.09902E-07,kg
+No Emissions Control,volatile organic compounds,1.23047E-05,kg
+weighted average,diesel,0.001170413,gal (US fl)
+weighted average,methane,9.3633E-07,kg
+weighted average,carbon monoxide,3.11611E-05,kg
+weighted average,carbon dioxide,0.011879687,kg
+weighted average,nitrous oxide,3.04307E-07,kg
+weighted average,ammonia,9.74954E-08,kg
+weighted average,nitrous oxides,0.000141035,kg
+weighted average,PM10,3.56039E-06,kg
+weighted average,PM25,3.45361E-06,kg
+weighted average,sulfur dioxide,1.09902E-07,kg
+weighted average,volatile organic compounds,5.68169E-06,kg

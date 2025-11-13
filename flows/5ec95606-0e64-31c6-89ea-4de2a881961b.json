@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "5ec95606-0e64-31c6-89ea-4de2a881961b",
+  "category": "placeholder",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2025-11-07T12:00:00Z",
+  "name": "Diesel Combustion, Turbine, Industrial, Uncontrolled",
+  "version": "01.00.000"
+}

@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "ed19f29a-2ef3-35ae-b5ea-e71a06ea142a",
+  "category": "placeholder",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2025-11-07T12:00:00Z",
+  "name": "Diesel Combustion, Turbine, Electric Generation, Flame",
+  "version": "01.00.000"
+}

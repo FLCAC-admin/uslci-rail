@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "1aa23aa1-9e91-34e6-9c05-02fb4e7ebde0",
+  "category": "placeholder",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2025-11-07T12:00:00Z",
+  "name": "Diesel Combustion, Reciprocating, Electric Generation, SCR",
+  "version": "01.00.000"
+}

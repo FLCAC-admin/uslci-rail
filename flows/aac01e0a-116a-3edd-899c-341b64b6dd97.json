@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "aac01e0a-116a-3edd-899c-341b64b6dd97",
+  "category": "placeholder",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2025-11-07T12:00:00Z",
+  "name": "Natural Gas Combustion, Internal Combustion Engines, Industrial, Natural Gas, Turbine:Cogeneration, Uncontrolled",
+  "version": "01.00.000"
+}
