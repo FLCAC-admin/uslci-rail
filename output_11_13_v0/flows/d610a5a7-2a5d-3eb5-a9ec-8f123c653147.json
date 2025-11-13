@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "d610a5a7-2a5d-3eb5-a9ec-8f123c653147",
+  "category": "Technosphere Flows / 48-49: Transportation and Warehousing",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "838aaa20-0117-11db-92e3-0800200c9a66",
+        "name": "Goods transport (mass*distance)"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2025-11-13T12:00:00Z",
+  "name": "Freight transport, tier 4C rail, diesel fueled, US",
+  "version": "01.00.000"
+}

@@ -24,7 +24,7 @@ modeling_constants_description: >
 completeness_description: >
     The mass balance for this process was not calculated. Infrastructure maintenance and expansion was not allocated to this unit process. Inventory development methods are detailed in the cited 2020 NEI report. 
 data_selection_description: >
-    Data selection methods for emissions factors are detailed in the 2020 NEI report. 
+    Data selection methods for emissions factors are detailed in the 2020 NEI report. Class II and III data are not included in this inventory due to low data availability.
 data_treatment_description: >
     The NEI locomotive methodology contains emissions factors on a grams pollutant per gallon fuel basis. Fuel efficiency was estimated using a numerical average across all engine tiers in the year 2024 based on STB R-1 reports. These values were paired to express emissions in terms of kg-pollutant per ton-kilometer transported. 
 sampling_description: >

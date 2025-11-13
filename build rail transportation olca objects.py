@@ -33,7 +33,7 @@ from flcac_utils.generate_processes import build_flow_dict, \
 from flcac_utils.util import assign_year_to_meta
 
 # working directory
-working_dir = Path(r'C:\Users\hwatson\code\environments\flcac_curation')
+working_dir = Path(__file__).parent
 
 # Load yaml file for flow meta data
 with open(working_dir / 'rail_flow_meta.yaml') as f:
@@ -80,7 +80,7 @@ for column in schema:
 #%% Add values for inputs ###
 df_olca['IsInput'] = df_olca['data name'].apply(lambda x: True if x == 'diesel' else False)
 df_olca['reference'] = False
-df_olca['ProcessName'] = 'Transport; rail, diesel powered; tier ' + df_olca['tier']
+df_olca['ProcessName'] = 'Freight transport; rail, diesel powered; tier ' + df_olca['tier']
 df_olca['ProcessID'] = df_olca['ProcessName'].apply(make_uuid)
 
 
@@ -116,7 +116,7 @@ for tier in unique_tier:
     processName = df_olca[df_olca['tier'] == tier]['ProcessName'].iloc[0]
     
     # Create FlowName by modifying the commodity string
-    flowName = f"Transport, tier {tier} rail, diesel fueled, US"
+    flowName = f"Freight transport, tier {tier} rail, diesel fueled, US"
     
     # generate reference flow uuid
     flowUUID = make_uuid([flowName, processName, processID])
@@ -203,10 +203,80 @@ for year in df_olca.Year.unique():
                                 dq_objs=dq_objs,
                                 )
     processes.update(p_dict)
+    
+    
 
 write_objects('rail-transport', flows, new_flows, processes,
               location_objs, dq_objs, source_objs
               )
+
+
+# %%
+
+from pathlib import Path
+import zipfile
+
+def extract_latest_zip(
+    fpath_zip: Path,
+    working_dir: Path,
+    output_folder_name: str | None = None,
+    overwrite: bool = True
+) -> Path:
+    """
+    Extract the most recently created ZIP file from a directory (or a single ZIP file),
+    delete the ZIP after extraction, and place the output inside `working_dir`.
+
+    Args:
+        fpath_zip (Path): Path to a ZIP file or a directory containing ZIP files.
+        working_dir (Path): Main working directory where extracted files will be placed.
+        output_folder_name (str | None): Optional name for the output folder. Defaults to ZIP name.
+        overwrite (bool): Whether to overwrite existing files. Defaults to True.
+
+    Returns:
+        Path: Path to the directory where files were extracted.
+    """
+    if not fpath_zip.exists():
+        raise FileNotFoundError(f"Path not found: {fpath_zip}")
+
+    if not working_dir.exists():
+        working_dir.mkdir(parents=True)
+
+    # Determine the ZIP file to extract
+    if fpath_zip.is_dir():
+        zip_files = list(fpath_zip.glob("*.zip"))
+        if not zip_files:
+            raise FileNotFoundError(f"No ZIP files found in directory: {fpath_zip}")
+        latest_zip = max(zip_files, key=lambda z: z.stat().st_ctime)
+    else:
+        latest_zip = fpath_zip
+
+    # Decide output folder name
+    if output_folder_name:
+        output_folder = working_dir / output_folder_name
+    else:
+        output_folder = working_dir / latest_zip.stem
+
+    output_folder.mkdir(parents=True, exist_ok=True)
+
+    try:
+        with zipfile.ZipFile(latest_zip, 'r') as archive:
+            if not overwrite:
+                existing_files = [output_folder / name for name in archive.namelist() if (output_folder / name).exists()]
+                if existing_files:
+                    print(f"Skipping extraction; files already exist: {existing_files}")
+                    return output_folder
+            archive.extractall(output_folder)
+    except zipfile.BadZipFile:
+        raise ValueError(f"Invalid ZIP file: {latest_zip}")
+
+    latest_zip.unlink()
+    print(f"Extracted files from {latest_zip.name} to {output_folder}")
+    return output_folder
+
+
+zip_path = working_dir / "src/flcac-utils/output"
+
+extract_latest_zip(zip_path, working_dir, 'output_11_13_v0')
 
 print('done')
 
