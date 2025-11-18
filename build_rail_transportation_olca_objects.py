@@ -272,7 +272,7 @@ def extract_latest_zip(
     return output_folder
 
 
-output_name = Path('output' / 'uslci-rail_v1.0.0')
+output_name = Path('output') / 'uslci-rail_v1.0.0'
 
 extract_latest_zip(out_path, working_dir, output_name)
 
