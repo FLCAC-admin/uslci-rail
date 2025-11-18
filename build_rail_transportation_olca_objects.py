@@ -1,28 +1,22 @@
-#%% PURPOSE ##
-
-'''
-
+"""
 The purpose of this script is to build olca process objects that will contain
 the 2020 NEI derived rail transport data for US class 1 line haul railroads.
 
 TO-DO:
 - Finalize process metadata
 - Complete dqi in flow meta
-
-'''
+"""
 
 
 #%% SETUP ##
 
 ## DEPENDENCIES ##
 import pandas as pd
-import numpy as np
 from pathlib import Path
 import yaml
 from esupy.location import read_iso_3166
 from esupy.util import make_uuid
 from flcac_utils.util import format_dqi_score
-import os
 
 from flcac_utils.util import generate_locations_from_exchange_df
 from flcac_utils.generate_processes import build_location_dict
@@ -34,17 +28,18 @@ from flcac_utils.util import assign_year_to_meta
 
 # working directory
 working_dir = Path(__file__).parent
+data_dir = working_dir / "data"
 
 # Load yaml file for flow meta data
-with open(working_dir / 'rail_flow_meta.yaml') as f:
+with open(data_dir / 'rail_flow_meta.yaml') as f:
     meta = yaml.safe_load(f)
 
 # Load yaml file for process meta data
-with open(working_dir / 'rail_process_meta.yaml') as f:
+with open(data_dir / 'rail_process_meta.yaml') as f:
     process_meta = yaml.safe_load(f)
 
 # Read in CSV file created by 'commodity transport distances.py'
-csv_path = r'C:\Users\hwatson\code\environments\flcac_curation\RAIL LCI INVENTORY 10_21.csv'
+csv_path = data_dir / 'RAIL LCI INVENTORY 10_21.csv'
 df_olca = pd.read_csv(csv_path)
 
 #df_olca = df_olca.drop(columns=['Mass Shipped (kg)', 'Avg. Dist. Shipped (km)', 'Mass Frac. by Mode'])
@@ -171,7 +166,7 @@ locations = generate_locations_from_exchange_df(df_olca)
 
 
 (process_meta, source_objs) = extract_sources_from_process_meta(
-   process_meta, bib_path = working_dir / 'rail_sources.bib')
+   process_meta, bib_path = data_dir / 'rail_sources.bib')
 
 (process_meta, actor_objs) = extract_actors_from_process_meta(process_meta)
 
@@ -205,13 +200,15 @@ for year in df_olca.Year.unique():
     processes.update(p_dict)
     
     
-
+out_path = working_dir / 'output'
+out_path.mkdir(exist_ok=True)
 write_objects('rail-transport', flows, new_flows, processes,
-              location_objs, dq_objs, source_objs
+              location_objs, dq_objs, source_objs,
+              out_path = out_path
               )
 
 
-# %%
+# %% helper function to extract zip file
 
 from pathlib import Path
 import zipfile
@@ -220,11 +217,12 @@ def extract_latest_zip(
     fpath_zip: Path,
     working_dir: Path,
     output_folder_name: str | None = None,
-    overwrite: bool = True
+    overwrite: bool = True,
+    delete_zip: bool = False,
 ) -> Path:
     """
     Extract the most recently created ZIP file from a directory (or a single ZIP file),
-    delete the ZIP after extraction, and place the output inside `working_dir`.
+    (optionally) delete the ZIP after extraction, and place the output inside `working_dir`.
 
     Args:
         fpath_zip (Path): Path to a ZIP file or a directory containing ZIP files.
@@ -269,36 +267,15 @@ def extract_latest_zip(
     except zipfile.BadZipFile:
         raise ValueError(f"Invalid ZIP file: {latest_zip}")
 
-    latest_zip.unlink()
+    if delete_zip:
+        latest_zip.unlink()
     print(f"Extracted files from {latest_zip.name} to {output_folder}")
     return output_folder
 
 
-zip_path = working_dir / "src/flcac-utils/output"
+output_name = Path('output') / 'uslci-rail_v1.0.0'
 
-
-output_name = 'output_date_version' #customize with every run
-
-
-extract_latest_zip(zip_path, working_dir, output_name)
+extract_latest_zip(out_path, working_dir, output_name)
 
 print('done')
-
-'''
-
-write_objects('rail-transport', flows, new_flows, processes,
-              location_objs, source_objs, actor_objs, dq_objs,
-              )
-'''
-
-
-
-
-
-
-
-
-
-
-
 
