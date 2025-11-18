@@ -28,17 +28,18 @@ from flcac_utils.util import assign_year_to_meta
 
 # working directory
 working_dir = Path(__file__).parent
+data_dir = working_dir / "data"
 
 # Load yaml file for flow meta data
-with open(working_dir / 'rail_flow_meta.yaml') as f:
+with open(data_dir / 'rail_flow_meta.yaml') as f:
     meta = yaml.safe_load(f)
 
 # Load yaml file for process meta data
-with open(working_dir / 'rail_process_meta.yaml') as f:
+with open(data_dir / 'rail_process_meta.yaml') as f:
     process_meta = yaml.safe_load(f)
 
 # Read in CSV file created by 'commodity transport distances.py'
-csv_path = working_dir / 'RAIL LCI INVENTORY 10_21.csv'
+csv_path = data_dir / 'RAIL LCI INVENTORY 10_21.csv'
 df_olca = pd.read_csv(csv_path)
 
 #df_olca = df_olca.drop(columns=['Mass Shipped (kg)', 'Avg. Dist. Shipped (km)', 'Mass Frac. by Mode'])
@@ -165,7 +166,7 @@ locations = generate_locations_from_exchange_df(df_olca)
 
 
 (process_meta, source_objs) = extract_sources_from_process_meta(
-   process_meta, bib_path = working_dir / 'rail_sources.bib')
+   process_meta, bib_path = data_dir / 'rail_sources.bib')
 
 (process_meta, actor_objs) = extract_actors_from_process_meta(process_meta)
 
