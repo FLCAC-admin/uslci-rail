@@ -6,8 +6,6 @@ TO-DO:
 - Finalize process metadata
 - Complete dqi in flow meta
 """
-
-
 #%% SETUP ##
 
 ## DEPENDENCIES ##
@@ -75,7 +73,7 @@ for column in schema:
 #%% Add values for inputs ###
 df_olca['IsInput'] = df_olca['data name'].apply(lambda x: True if x == 'diesel' else False)
 df_olca['reference'] = False
-df_olca['ProcessName'] = 'Freight transport; rail, diesel powered; tier ' + df_olca['tier']
+df_olca['ProcessName'] = 'Rail transport, freight; diesel powered; tier ' + df_olca['tier']
 df_olca['ProcessID'] = df_olca['ProcessName'].apply(make_uuid)
 
 
@@ -199,14 +197,12 @@ for year in df_olca.Year.unique():
                                 )
     processes.update(p_dict)
     
-    
 out_path = working_dir / 'output'
 out_path.mkdir(exist_ok=True)
 write_objects('rail-transport', flows, new_flows, processes,
               location_objs, dq_objs, source_objs,
               out_path = out_path
               )
-
 
 # %% helper function to extract zip file
 
