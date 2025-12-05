@@ -94,6 +94,15 @@ df_olca['default_provider_name'] = df_olca['data name'].map(
 df_olca['default_provider'] = df_olca['data name'].map(
     {k: v['DefaultProviderUUID'] for k, v in meta['Flows'].items()})
 
+# %% overwrite UUIDs for average unit process
+
+
+target = 'Rail transport, freight; diesel powered; tier weighted average'
+uuid = '7de9c230-fd0f-3478-be87-f80181132faa'
+
+mask = df_olca['ProcessName'].str.contains(target, regex=False, na=False)
+df_olca.loc[mask, 'ProcessID'] = uuid
+
 
 #%% Create new flows for the reference flow of each process ###
 

@@ -29,11 +29,11 @@ Flows:
     DefaultProviderUUID: #no provider
     FlowName: Nitrous oxide
     FlowUUID: cfee0524-7ad6-300b-b050-6249135a2492
-  nitrous oxides:
+  nitrogen oxides:
     ProcessName: #no provider
     DefaultProviderUUID: #no provider
-    FlowName: Nitrous oxide
-    FlowUUID: cfee0524-7ad6-300b-b050-6249135a2492
+    FlowName: Nitrogen oxides
+    FlowUUID: 4382ba18-dd21-3837-80b2-94283ef5490e
   ammonia:
     ProcessName: #no provider
     DefaultProviderUUID: #no provider
