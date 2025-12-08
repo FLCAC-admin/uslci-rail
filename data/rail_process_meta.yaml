@@ -39,14 +39,14 @@ use_advice:
 # Edit this!
 sources:
  - NEI_report: >
-    2020 National Emissions Inventory: Locomotive Methodology. U.S. Environmental Protection Agency, National Vehicle and Fuel Emissions Laboratory
- - STB_BNSF: BNSF Railway Company - Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024
- - STB_CSX: CSX Transportation Inc. - Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024
- - STB_Trunk: Grand Trunk Corporation - Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024
- - STB_Norfolk: Norfolk Southern Railway Company - Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024
- - STB_Soo: Soo Line Railway Company & Kansas City Southern Railway Company - Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024
- - STB_Union: Union Pacific Railroad Company - Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024
- - Doc: USLCI-rail documentation
+    EPA (2020) National Emissions Inventory: Locomotive Methodology. U.S. Environmental Protection Agency, National Vehicle and Fuel Emissions Laboratory
+ - STB_BNSF: BNSF Railway Company (2025) Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024
+ - STB_CSX: CSX Transportation Inc. (2025) Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024
+ - STB_Trunk: Grand Trunk Corporation (2025) Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024
+ - STB_Norfolk: Norfolk Southern Railway Company (2025) Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024
+ - STB_Soo: Soo Line Railway Company & Kansas City Southern Railway Company (2025) Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024
+ - STB_Union: Union Pacific Railroad Company (2025) Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024
+ - Doc: ERG (2025) USLCI-rail documentation
 
 ## Admin information
 

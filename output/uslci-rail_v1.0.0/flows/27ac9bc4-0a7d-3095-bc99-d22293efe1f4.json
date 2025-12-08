@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "27ac9bc4-0a7d-3095-bc99-d22293efe1f4",
+  "category": "Technosphere Flows / 48-49: Transportation and Warehousing / 4821: Rail Transportation",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "838aaa20-0117-11db-92e3-0800200c9a66",
+        "name": "Goods transport (mass*distance)"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2025-12-08T12:00:00Z",
+  "name": "Transport, rail, freight; diesel powered; emissions tier No Emissions Control",
+  "version": "01.00.000"
+}

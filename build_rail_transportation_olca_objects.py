@@ -73,7 +73,7 @@ for column in schema:
 #%% Add values for inputs ###
 df_olca['IsInput'] = df_olca['data name'].apply(lambda x: True if x == 'diesel' else False)
 df_olca['reference'] = False
-df_olca['ProcessName'] = 'Rail transport, freight; diesel powered; tier ' + df_olca['tier']
+df_olca['ProcessName'] = 'Transport, rail, freight; diesel powered; tier ' + df_olca['tier']
 df_olca['ProcessID'] = df_olca['ProcessName'].apply(make_uuid)
 
 
@@ -97,7 +97,7 @@ df_olca['default_provider'] = df_olca['data name'].map(
 # %% overwrite UUIDs for average unit process
 
 
-target = 'Rail transport, freight; diesel powered; tier weighted average'
+target = 'Transport, rail, freight; diesel powered; tier weighted average'
 uuid = '7de9c230-fd0f-3478-be87-f80181132faa'
 
 mask = df_olca['ProcessName'].str.contains(target, regex=False, na=False)
@@ -118,10 +118,12 @@ for tier in unique_tier:
     processName = df_olca[df_olca['tier'] == tier]['ProcessName'].iloc[0]
     
     # Create FlowName by modifying the commodity string
-    flowName = f"Freight transport, tier {tier} rail, diesel fueled, US"
-    
+    flowName = f"Transport, rail, freight; diesel powered; emissions tier {tier}"
+    if tier == 'weighted average':
+        flowUUID = '73c7494d-4e93-3769-896b-8bb82f0dfccc'
     # generate reference flow uuid
-    flowUUID = make_uuid([flowName, processName, processID])
+    else:
+        flowUUID = make_uuid([flowName, processName, processID])
 
     # Create the new row as a dictionary
     new_row = {
@@ -149,11 +151,21 @@ df_olca = pd.concat([df_olca, new_df], ignore_index=True)
 #%% Add values shared by both inputs and ref flow
 
 df_olca['ProcessCategory'] = '48-49: Transportation and Warehousing/ 4821: Rail Transportation'
-df_olca['Context'] = 'Technosphere Flows / 48-49: Transportation and Warehousing'
+
+df_olca['Context'] = 'Technosphere Flows / 48-49: Transportation and Warehousing / 4821: Rail Transportation'
 df_olca['FlowType'] = 'PRODUCT_FLOW'
 df_olca['avoided_product'] = False
 df_olca['location'] = 'US'
 df_olca['Year'] = 2020
+
+# %% re-locate the fuel
+
+
+target2 = 'Diesel, at refinery'
+diesel_location = 'Technosphere Flows / 31-33: Manufacturing / 3241: Petroleum and Coal Products Manufacturing'
+
+mask = df_olca['FlowName'].str.contains(target2, regex=False, na=False)
+df_olca.loc[mask, 'Context'] = diesel_location
 
 
 #%% Assign exchange dqi
@@ -218,6 +230,65 @@ write_objects('rail-transport', flows, new_flows, processes,
 from pathlib import Path
 import zipfile
 
+# def extract_latest_zip(
+#     fpath_zip: Path,
+#     working_dir: Path,
+#     output_folder_name: str | None = None,
+#     overwrite: bool = True,
+#     delete_zip: bool = False,
+# ) -> Path:
+#     """
+#     Extract the most recently created ZIP file from a directory (or a single ZIP file),
+#     (optionally) delete the ZIP after extraction, and place the output inside `working_dir`.
+
+#     Args:
+#         fpath_zip (Path): Path to a ZIP file or a directory containing ZIP files.
+#         working_dir (Path): Main working directory where extracted files will be placed.
+#         output_folder_name (str | None): Optional name for the output folder. Defaults to ZIP name.
+#         overwrite (bool): Whether to overwrite existing files. Defaults to True.
+
+#     Returns:
+#         Path: Path to the directory where files were extracted.
+#     """
+#     if not fpath_zip.exists():
+#         raise FileNotFoundError(f"Path not found: {fpath_zip}")
+
+#     if not working_dir.exists():
+#         working_dir.mkdir(parents=True)
+
+#     # Determine the ZIP file to extract
+#     if fpath_zip.is_dir():
+#         zip_files = list(fpath_zip.glob("*.zip"))
+#         if not zip_files:
+#             raise FileNotFoundError(f"No ZIP files found in directory: {fpath_zip}")
+#         latest_zip = max(zip_files, key=lambda z: z.stat().st_ctime)
+#     else:
+#         latest_zip = fpath_zip
+
+#     # Decide output folder name
+#     if output_folder_name:
+#         output_folder = working_dir / output_folder_name
+#     else:
+#         output_folder = working_dir / latest_zip.stem
+
+#     output_folder.mkdir(parents=True, exist_ok=True)
+
+#     try:
+#         with zipfile.ZipFile(latest_zip, 'r') as archive:
+#             if not overwrite:
+#                 existing_files = [output_folder / name for name in archive.namelist() if (output_folder / name).exists()]
+#                 if existing_files:
+#                     print(f"Skipping extraction; files already exist: {existing_files}")
+#                     return output_folder
+#             archive.extractall(output_folder)
+#     except zipfile.BadZipFile:
+#         raise ValueError(f"Invalid ZIP file: {latest_zip}")
+
+#     if delete_zip:
+#         latest_zip.unlink()
+#     print(f"Extracted files from {latest_zip.name} to {output_folder}")
+#     return output_folder
+
 def extract_latest_zip(
     fpath_zip: Path,
     working_dir: Path,
@@ -274,9 +345,9 @@ def extract_latest_zip(
 
     if delete_zip:
         latest_zip.unlink()
+
     print(f"Extracted files from {latest_zip.name} to {output_folder}")
     return output_folder
-
 
 output_name = Path('output') / 'uslci-rail_v1.0.0'
 
