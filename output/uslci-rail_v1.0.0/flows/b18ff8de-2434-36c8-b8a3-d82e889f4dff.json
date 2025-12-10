@@ -1,7 +1,7 @@
 {
   "@type": "Flow",
   "@id": "b18ff8de-2434-36c8-b8a3-d82e889f4dff",
-  "category": "Technosphere Flows / 48-49: Transportation and Warehousing / 4821: Rail Transportation",
+  "category": "Technosphere flows / 48-49: Transportation and Warehousing / 4821: Rail Transportation",
   "flowProperties": [
     {
       "conversionFactor": 1.0,
@@ -14,7 +14,7 @@
     }
   ],
   "flowType": "PRODUCT_FLOW",
-  "lastChange": "2025-12-08T12:00:00Z",
+  "lastChange": "2025-12-10T12:00:00Z",
   "name": "Transport, rail, freight; diesel powered; emissions tier 1",
   "version": "01.00.000"
 }

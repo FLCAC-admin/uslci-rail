@@ -2,10 +2,10 @@
   "@type": "Source",
   "@id": "69cdfabb-b2ff-3ed9-8d1b-63ab232e56c9",
   "description": "ERG, 2020 National Emissions Inventory: Locomotive Methodology. U.S. Environmental Protection Agency, National Vehicle and Fuel Emissions Laboratory, 2022",
-  "lastChange": "2025-12-08T12:00:00Z",
-  "name": "EPA (2020) National Emissions Inventory: Locomotive Methodology. U.S. Environmental Protection Agency, National Vehicle and Fuel Emissions Laboratory\n",
+  "lastChange": "2025-12-10T12:00:00Z",
+  "name": "ERG (2020) National Emissions Inventory: Locomotive Methodology",
   "textReference": "",
   "url": "https://www.epa.gov/system/files/documents/2023-01/2020_NEI_Rail_062722.pdf",
   "version": "00.00.001",
-  "year": "2022"
+  "year": 2022
 }

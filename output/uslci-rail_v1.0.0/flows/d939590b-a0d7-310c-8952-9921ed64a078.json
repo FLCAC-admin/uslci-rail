@@ -1,7 +1,7 @@
 {
   "@type": "Flow",
   "@id": "d939590b-a0d7-310c-8952-9921ed64a078",
-  "category": "Technosphere Flows / 31-33: Manufacturing / 3241: Petroleum and Coal Products Manufacturing",
+  "category": "Technosphere flows / 31-33: Manufacturing / 3241: Petroleum and Coal Products Manufacturing",
   "flowProperties": [
     {
       "conversionFactor": 1.0,
@@ -14,7 +14,7 @@
     }
   ],
   "flowType": "PRODUCT_FLOW",
-  "lastChange": "2025-12-08T12:00:00Z",
+  "lastChange": "2025-12-10T12:00:00Z",
   "name": "Diesel, at refinery",
   "version": "01.00.000"
 }

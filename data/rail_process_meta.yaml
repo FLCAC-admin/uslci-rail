@@ -38,15 +38,13 @@ use_advice:
    # Internal review.
 # Edit this!
 sources:
- - NEI_report: >
-    EPA (2020) National Emissions Inventory: Locomotive Methodology. U.S. Environmental Protection Agency, National Vehicle and Fuel Emissions Laboratory
- - STB_BNSF: BNSF Railway Company (2025) Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024
- - STB_CSX: CSX Transportation Inc. (2025) Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024
- - STB_Trunk: Grand Trunk Corporation (2025) Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024
- - STB_Norfolk: Norfolk Southern Railway Company (2025) Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024
- - STB_Soo: Soo Line Railway Company & Kansas City Southern Railway Company (2025) Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024
- - STB_Union: Union Pacific Railroad Company (2025) Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024
- - Doc: ERG (2025) USLCI-rail documentation
+ - NEI_report: 'ERG (2020) National Emissions Inventory: Locomotive Methodology'
+ - STB_BNSF: BNSF Railway Company (2025) Annual Report R-1 to the Surface Transportation Board
+ - STB_CSX: CSX Transportation Inc. (2025) Annual Report R-1 to the Surface Transportation Board
+ - STB_Trunk: Grand Trunk Corporation (2025) Annual Report R-1 to the Surface Transportation Board
+ - STB_Norfolk: Norfolk Southern Railway Company (2025) Annual Report R-1 to the Surface Transportation Board
+ - STB_Soo: Soo Line Railway Company & Kansas City Southern Railway Company (2025) Annual Report R-1 to the Surface Transportation Board
+ - STB_Union: Union Pacific Railroad Company (2025) Annual Report R-1 to the Surface Transportation Board
 
 ## Admin information
 
@@ -69,7 +67,7 @@ data_set_owner:
     USLCI: 'U.S. EPA'
 
 publication: 
-    uslci_rail: 'Class 1 Line Haul Rail Transport'
+    uslci_rail: ERG (2025) USLCI Rail Transport v1.0
 
 restrictions_description: >  #should this be edited for the rail lci?
     These U.S. LCI Database Project data ("Data") are provided by the National Renewable Energy Laboratory ("NREL"), operated by the Alliance for Sustainable Energy, LLC ("Alliance") for the US Department of Energy ("DOE") under Contract No. DE-AC36-08GO28308. The United States Government (the "Government") retains and the user acknowledges that the Government retains a non-exclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of these data, or allow others to do so, for Government purposes.

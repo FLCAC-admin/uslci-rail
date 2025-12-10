@@ -2,10 +2,10 @@
   "@type": "Source",
   "@id": "876d330e-672f-39e3-aaff-d9014199ddec",
   "description": "CSX Transportation Inc., CSX Transportation Inc. - Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024, 2025",
-  "lastChange": "2025-12-08T12:00:00Z",
-  "name": "CSX Transportation Inc. (2025) Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024",
+  "lastChange": "2025-12-10T12:00:00Z",
+  "name": "CSX Transportation Inc. (2025) Annual Report R-1 to the Surface Transportation Board",
   "textReference": "",
   "url": "https://www.stb.gov/wp-content/uploads/R1-CSX-2024.zip",
   "version": "00.00.001",
-  "year": "2025"
+  "year": 2025
 }

@@ -37,7 +37,7 @@ with open(data_dir / 'rail_process_meta.yaml') as f:
     process_meta = yaml.safe_load(f)
 
 # Read in CSV file created by 'commodity transport distances.py'
-csv_path = data_dir / 'RAIL LCI INVENTORY 10_21.csv'
+csv_path = data_dir / 'RAIL_LCI_INVENTORY.csv'
 df_olca = pd.read_csv(csv_path)
 
 #df_olca = df_olca.drop(columns=['Mass Shipped (kg)', 'Avg. Dist. Shipped (km)', 'Mass Frac. by Mode'])
@@ -94,8 +94,7 @@ df_olca['default_provider_name'] = df_olca['data name'].map(
 df_olca['default_provider'] = df_olca['data name'].map(
     {k: v['DefaultProviderUUID'] for k, v in meta['Flows'].items()})
 
-# %% overwrite UUIDs for average unit process
-
+# %% overwrite UUIDs for average unit process based on what previously existed in USLCI
 
 target = 'Transport, rail, freight; diesel powered; tier weighted average'
 uuid = '7de9c230-fd0f-3478-be87-f80181132faa'
@@ -152,7 +151,7 @@ df_olca = pd.concat([df_olca, new_df], ignore_index=True)
 
 df_olca['ProcessCategory'] = '48-49: Transportation and Warehousing/ 4821: Rail Transportation'
 
-df_olca['Context'] = 'Technosphere Flows / 48-49: Transportation and Warehousing / 4821: Rail Transportation'
+df_olca['Context'] = 'Technosphere flows / 48-49: Transportation and Warehousing / 4821: Rail Transportation'
 df_olca['FlowType'] = 'PRODUCT_FLOW'
 df_olca['avoided_product'] = False
 df_olca['location'] = 'US'
@@ -162,7 +161,7 @@ df_olca['Year'] = 2020
 
 
 target2 = 'Diesel, at refinery'
-diesel_location = 'Technosphere Flows / 31-33: Manufacturing / 3241: Petroleum and Coal Products Manufacturing'
+diesel_location = 'Technosphere flows / 31-33: Manufacturing / 3241: Petroleum and Coal Products Manufacturing'
 
 mask = df_olca['FlowName'].str.contains(target2, regex=False, na=False)
 df_olca.loc[mask, 'Context'] = diesel_location
@@ -225,133 +224,9 @@ write_objects('rail-transport', flows, new_flows, processes,
               out_path = out_path
               )
 
-# %% helper function to extract zip file
+#%% Unzip files to repo
+from flcac_utils.util import extract_latest_zip
 
-from pathlib import Path
-import zipfile
-
-# def extract_latest_zip(
-#     fpath_zip: Path,
-#     working_dir: Path,
-#     output_folder_name: str | None = None,
-#     overwrite: bool = True,
-#     delete_zip: bool = False,
-# ) -> Path:
-#     """
-#     Extract the most recently created ZIP file from a directory (or a single ZIP file),
-#     (optionally) delete the ZIP after extraction, and place the output inside `working_dir`.
-
-#     Args:
-#         fpath_zip (Path): Path to a ZIP file or a directory containing ZIP files.
-#         working_dir (Path): Main working directory where extracted files will be placed.
-#         output_folder_name (str | None): Optional name for the output folder. Defaults to ZIP name.
-#         overwrite (bool): Whether to overwrite existing files. Defaults to True.
-
-#     Returns:
-#         Path: Path to the directory where files were extracted.
-#     """
-#     if not fpath_zip.exists():
-#         raise FileNotFoundError(f"Path not found: {fpath_zip}")
-
-#     if not working_dir.exists():
-#         working_dir.mkdir(parents=True)
-
-#     # Determine the ZIP file to extract
-#     if fpath_zip.is_dir():
-#         zip_files = list(fpath_zip.glob("*.zip"))
-#         if not zip_files:
-#             raise FileNotFoundError(f"No ZIP files found in directory: {fpath_zip}")
-#         latest_zip = max(zip_files, key=lambda z: z.stat().st_ctime)
-#     else:
-#         latest_zip = fpath_zip
-
-#     # Decide output folder name
-#     if output_folder_name:
-#         output_folder = working_dir / output_folder_name
-#     else:
-#         output_folder = working_dir / latest_zip.stem
-
-#     output_folder.mkdir(parents=True, exist_ok=True)
-
-#     try:
-#         with zipfile.ZipFile(latest_zip, 'r') as archive:
-#             if not overwrite:
-#                 existing_files = [output_folder / name for name in archive.namelist() if (output_folder / name).exists()]
-#                 if existing_files:
-#                     print(f"Skipping extraction; files already exist: {existing_files}")
-#                     return output_folder
-#             archive.extractall(output_folder)
-#     except zipfile.BadZipFile:
-#         raise ValueError(f"Invalid ZIP file: {latest_zip}")
-
-#     if delete_zip:
-#         latest_zip.unlink()
-#     print(f"Extracted files from {latest_zip.name} to {output_folder}")
-#     return output_folder
-
-def extract_latest_zip(
-    fpath_zip: Path,
-    working_dir: Path,
-    output_folder_name: str | None = None,
-    overwrite: bool = True,
-    delete_zip: bool = False,
-) -> Path:
-    """
-    Extract the most recently created ZIP file from a directory (or a single ZIP file),
-    (optionally) delete the ZIP after extraction, and place the output inside `working_dir`.
-
-    Args:
-        fpath_zip (Path): Path to a ZIP file or a directory containing ZIP files.
-        working_dir (Path): Main working directory where extracted files will be placed.
-        output_folder_name (str | None): Optional name for the output folder. Defaults to ZIP name.
-        overwrite (bool): Whether to overwrite existing files. Defaults to True.
-
-    Returns:
-        Path: Path to the directory where files were extracted.
-    """
-    if not fpath_zip.exists():
-        raise FileNotFoundError(f"Path not found: {fpath_zip}")
-
-    if not working_dir.exists():
-        working_dir.mkdir(parents=True)
-
-    # Determine the ZIP file to extract
-    if fpath_zip.is_dir():
-        zip_files = list(fpath_zip.glob("*.zip"))
-        if not zip_files:
-            raise FileNotFoundError(f"No ZIP files found in directory: {fpath_zip}")
-        latest_zip = max(zip_files, key=lambda z: z.stat().st_ctime)
-    else:
-        latest_zip = fpath_zip
-
-    # Decide output folder name
-    if output_folder_name:
-        output_folder = working_dir / output_folder_name
-    else:
-        output_folder = working_dir / latest_zip.stem
-
-    output_folder.mkdir(parents=True, exist_ok=True)
-
-    try:
-        with zipfile.ZipFile(latest_zip, 'r') as archive:
-            if not overwrite:
-                existing_files = [output_folder / name for name in archive.namelist() if (output_folder / name).exists()]
-                if existing_files:
-                    print(f"Skipping extraction; files already exist: {existing_files}")
-                    return output_folder
-            archive.extractall(output_folder)
-    except zipfile.BadZipFile:
-        raise ValueError(f"Invalid ZIP file: {latest_zip}")
-
-    if delete_zip:
-        latest_zip.unlink()
-
-    print(f"Extracted files from {latest_zip.name} to {output_folder}")
-    return output_folder
-
-output_name = Path('output') / 'uslci-rail_v1.0.0'
-
-extract_latest_zip(out_path, working_dir, output_name)
-
-print('done')
-
+extract_latest_zip(out_path,
+                   working_dir,
+                   output_folder_name = out_path / 'uslci-rail_v1.0.0')

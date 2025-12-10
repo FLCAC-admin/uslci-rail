@@ -26,7 +26,7 @@
       "flow": {
         "@type": "Flow",
         "@id": "d939590b-a0d7-310c-8952-9921ed64a078",
-        "category": "Technosphere Flows / 31-33: Manufacturing / 3241: Petroleum and Coal Products Manufacturing",
+        "category": "Technosphere flows / 31-33: Manufacturing / 3241: Petroleum and Coal Products Manufacturing",
         "name": "Diesel, at refinery"
       },
       "flowProperty": {
@@ -273,7 +273,7 @@
       "flow": {
         "@type": "Flow",
         "@id": "0843cbcc-7c1e-3301-ada9-5c6d89ad1dff",
-        "category": "Technosphere Flows / 48-49: Transportation and Warehousing / 4821: Rail Transportation",
+        "category": "Technosphere flows / 48-49: Transportation and Warehousing / 4821: Rail Transportation",
         "name": "Transport, rail, freight; diesel powered; emissions tier 1+"
       },
       "flowProperty": {
@@ -291,7 +291,7 @@
       }
     }
   ],
-  "lastChange": "2025-12-08T12:00:00Z",
+  "lastChange": "2025-12-10T12:00:00Z",
   "location": {
     "@type": "Location",
     "@id": "0b3b97fa-6688-3c56-88ee-4ae80ec0c3c2",
@@ -300,7 +300,7 @@
   "name": "Transport, rail, freight; diesel powered; tier 1+",
   "processDocumentation": {
     "completenessDescription": "The mass balance for this process was not calculated. Infrastructure maintenance and expansion was not allocated to this unit process. Inventory development methods are detailed in the cited 2020 NEI report. \n",
-    "creationDate": "2025-12-08T12:00:00",
+    "creationDate": "2025-12-10T12:00:00",
     "dataDocumentor": {
       "@type": "Actor",
       "@id": "38e67478-a915-43d9-ad67-e25db79a4acc",
@@ -328,8 +328,8 @@
     "projectDescription": "This dataset was developed by the Federal LCA Commons Data Curator Eastern Research Group, Inc. (ERG) under subcontract (SUB-2024-10066) to the National Renewable Energy Laboratory under Department of Energy (DOE) Prime Contract No. DE-AC36-08GO28308. The work is funded by DOE's Advanced Materials & Manufacturing Technologies Office (AMMTO).\n",
     "publication": {
       "@type": "Source",
-      "@id": "e0e162ac-630c-367a-ba51-de2295242e2d",
-      "name": "Class 1 Line Haul Rail Transport"
+      "@id": "8ae8a6c8-7d15-3344-874b-67179fd14d60",
+      "name": "ERG (2025) USLCI Rail Transport v1.0"
     },
     "restrictionsDescription": "These U.S. LCI Database Project data (\"Data\") are provided by the National Renewable Energy Laboratory (\"NREL\"), operated by the Alliance for Sustainable Energy, LLC (\"Alliance\") for the US Department of Energy (\"DOE\") under Contract No. DE-AC36-08GO28308. The United States Government (the \"Government\") retains and the user acknowledges that the Government retains a non-exclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of these data, or allow others to do so, for Government purposes.\nAccess to and use of these Data shall impose the following obligations on the user, as set forth in this Agreement. The user is granted the right, without any fee or cost, to use, copy, modify, alter, enhance and distribute these Data for any purpose whatsoever, provided that this entire notice appears in all copies of the Data. Any modification, alteration or enhancement of these data shall be identified and documented by the user. Further, the user agrees to credit the DOE/NREL/Alliance in any publication that results from the use of these Data. The names DOE/NREL/Alliance, however, may not be used in any advertising or publicity to endorse or promote any products or commercial entities unless specific written permission is obtained from DOE/NREL/Alliance. The user also understands that DOE/NREL/Alliance is not obligated to provide the user with any support, consulting, training or assistance of any kind with regard to the use of these Data or to provide the user with any updates, revisions or new versions of these Data.\nYOU AGREE TO INDEMNIFY THE GOVERNMENT AND DOE/NREL/ALLIANCE, AND ITS SUBSIDIARIES, AFFILIATES, OFFICERS, AGENTS, AND EMPLOYEES AGAINST ANY CLAIM OR DEMAND, INCLUDING REASONABLE ATTORNEYS' FEES, RELATED TO YOUR USE OF THESE DATA. THESE DATA ARE PROVIDED BY DOE/NREL/ALLIANCE \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE GOVERNMENT OR DOE/NREL/ALLIANCE BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER, INCLUDING BUT NOT LIMITED TO CLAIMS ASSOCIATED WITH THE LOSS OF DATA OR PROFITS, WHICH MAY RESULT FROM AN ACTION IN CONTRACT, NEGLIGENCE OR OTHER TORTIOUS CLAIM THAT ARISES OUT OF OR IN CONNECTION WITH THE ACCESS, USE OR PERFORMANCE OF THESE DATA.\n",
     "samplingDescription": "Uncertainty was not calculated for this process. Sampling methods for emissions factors are described in detail in the 2020 NEI report. Production and combustion of diesel fuel is included in the scope of this process. Upstream diesel data provided by USLCI. \n",
@@ -337,42 +337,37 @@
       {
         "@type": "Source",
         "@id": "69cdfabb-b2ff-3ed9-8d1b-63ab232e56c9",
-        "name": "EPA (2020) National Emissions Inventory: Locomotive Methodology. U.S. Environmental Protection Agency, National Vehicle and Fuel Emissions Laboratory\n"
+        "name": "ERG (2020) National Emissions Inventory: Locomotive Methodology"
       },
       {
         "@type": "Source",
         "@id": "1c279da7-23ee-3fc3-8ea6-d6dd18974ee7",
-        "name": "BNSF Railway Company (2025) Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024"
+        "name": "BNSF Railway Company (2025) Annual Report R-1 to the Surface Transportation Board"
       },
       {
         "@type": "Source",
         "@id": "876d330e-672f-39e3-aaff-d9014199ddec",
-        "name": "CSX Transportation Inc. (2025) Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024"
+        "name": "CSX Transportation Inc. (2025) Annual Report R-1 to the Surface Transportation Board"
       },
       {
         "@type": "Source",
         "@id": "1b8ffb69-604e-3778-82fe-af2839340126",
-        "name": "Grand Trunk Corporation (2025) Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024"
+        "name": "Grand Trunk Corporation (2025) Annual Report R-1 to the Surface Transportation Board"
       },
       {
         "@type": "Source",
         "@id": "50b7a115-a141-3567-82cf-a9231b372485",
-        "name": "Norfolk Southern Railway Company (2025) Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024"
+        "name": "Norfolk Southern Railway Company (2025) Annual Report R-1 to the Surface Transportation Board"
       },
       {
         "@type": "Source",
         "@id": "a7972df9-a45b-3489-925e-98e4b786b5c3",
-        "name": "Soo Line Railway Company & Kansas City Southern Railway Company (2025) Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024"
+        "name": "Soo Line Railway Company & Kansas City Southern Railway Company (2025) Annual Report R-1 to the Surface Transportation Board"
       },
       {
         "@type": "Source",
         "@id": "316b123a-6e33-3c48-97cd-fe34a563f127",
-        "name": "Union Pacific Railroad Company (2025) Annual Report R-1 to the Surface Transportation Board for the year ending December 31, 2024"
-      },
-      {
-        "@type": "Source",
-        "@id": "2066020c-f710-3016-b81f-58e4b3272de9",
-        "name": "ERG (2025) USLCI-rail documentation"
+        "name": "Union Pacific Railroad Company (2025) Annual Report R-1 to the Surface Transportation Board"
       }
     ],
     "technologyDescription": "This unit process represents the operation of Class 1 line haul rail transportation, excluding passsenger railroads (Amtrak). Emissions are further specified by emissions control tier. Tiers indicate emissions standards for diesel locomotives established by the EPA, and apply to newly manufactured and remanufactured locomotives. Tiers correspond to the age and stringency of the standards: Tier 0 (1973-1992), Tier 1 (1993-2004), Tier 2 (2005-201), Tier 3 (2012-2014), Tier 4 (2015 onwards). Tiers marked with + (e.g. Tier 0+) indicate tiers inclusive of and above the indicated tier.\n",
