@@ -229,4 +229,4 @@ from flcac_utils.util import extract_latest_zip
 
 extract_latest_zip(out_path,
                    working_dir,
-                   output_folder_name = out_path / 'uslci-rail_v1.0.0')
+                   output_folder_name = out_path / 'uslci-rail_v1.0')
