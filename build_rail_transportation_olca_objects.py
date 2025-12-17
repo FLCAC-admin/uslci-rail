@@ -10,6 +10,7 @@ TO-DO:
 
 ## DEPENDENCIES ##
 import pandas as pd
+import numpy as np
 from pathlib import Path
 import yaml
 from esupy.location import read_iso_3166
@@ -31,10 +32,6 @@ data_dir = working_dir / "data"
 # Load yaml file for flow meta data
 with open(data_dir / 'rail_flow_meta.yaml') as f:
     meta = yaml.safe_load(f)
-
-# Load yaml file for process meta data
-with open(data_dir / 'rail_process_meta.yaml') as f:
-    process_meta = yaml.safe_load(f)
 
 # Read in CSV file created by 'commodity transport distances.py'
 csv_path = data_dir / 'RAIL_LCI_INVENTORY.csv'
@@ -135,8 +132,8 @@ for tier in unique_tier:
         'reference': True,
         'amount': 1.0,
         'unit': 't*km',
-        'default_provider': 'nan',
-        'default_provider_name': 'nan'
+        'default_provider': np.nan,
+        'default_provider_name': np.nan
     }
     new_rows.append(new_row)
 
@@ -181,7 +178,9 @@ locations = generate_locations_from_exchange_df(df_olca)
 
 
 #%% Build supporting objects
-
+# Load yaml file for process meta data
+with open(data_dir / 'rail_process_meta.yaml') as f:
+    process_meta = yaml.safe_load(f)
 
 (process_meta, source_objs) = extract_sources_from_process_meta(
    process_meta, bib_path = data_dir / 'rail_sources.bib')
@@ -191,22 +190,19 @@ locations = generate_locations_from_exchange_df(df_olca)
 dq_objs = extract_dqsystems(meta['DQI']['dqSystem'])
 
 process_meta['dq_entry'] = format_dqi_score(meta['DQI']['Process'])
+process_mea = assign_year_to_meta(process_meta, process_meta['valid_from'],
+                                  process_meta['valid_until'])
 
 # generate dictionary of location objects
 location_objs = build_location_dict(df_olca, locations)
 
-
 #%% Create json file
-
 
 validate_exchange_data(df_olca)
 flows, new_flows = build_flow_dict(df_olca)
 processes = {}
 for year in df_olca.Year.unique():
     ### *** I dont think this is relevant since we have 1 year of data
-    #process_meta = assign_year_to_meta(process_meta, year)
-    # Update time period to match year for each region
-
     p_dict = build_process_dict(df_olca.query('Year == @year'),
                                 flows,
                                 meta=process_meta,

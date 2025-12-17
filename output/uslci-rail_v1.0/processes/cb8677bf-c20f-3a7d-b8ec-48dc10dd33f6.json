@@ -265,10 +265,6 @@
     },
     {
       "amount": 1.0,
-      "defaultProvider": {
-        "@type": "Process",
-        "@id": "nan"
-      },
       "dqEntry": "(2;2;1;1;1)",
       "flow": {
         "@type": "Flow",
@@ -291,7 +287,7 @@
       }
     }
   ],
-  "lastChange": "2025-12-10T12:00:00Z",
+  "lastChange": "2025-12-17T12:00:00Z",
   "location": {
     "@type": "Location",
     "@id": "0b3b97fa-6688-3c56-88ee-4ae80ec0c3c2",
@@ -300,7 +296,7 @@
   "name": "Transport, rail, freight; diesel powered; tier 0+",
   "processDocumentation": {
     "completenessDescription": "The mass balance for this process was not calculated. Infrastructure maintenance and expansion was not allocated to this unit process. Inventory development methods are detailed in the cited 2020 NEI report. \n",
-    "creationDate": "2025-12-10T12:00:00",
+    "creationDate": "2025-12-16T12:00:00",
     "dataDocumentor": {
       "@type": "Actor",
       "@id": "38e67478-a915-43d9-ad67-e25db79a4acc",
@@ -372,8 +368,8 @@
     ],
     "technologyDescription": "This unit process represents the operation of Class 1 line haul rail transportation, excluding passsenger railroads (Amtrak). Emissions are further specified by emissions control tier. Tiers indicate emissions standards for diesel locomotives established by the EPA, and apply to newly manufactured and remanufactured locomotives. Tiers correspond to the age and stringency of the standards: Tier 0 (1973-1992), Tier 1 (1993-2004), Tier 2 (2005-201), Tier 3 (2012-2014), Tier 4 (2015 onwards). Tiers marked with + (e.g. Tier 0+) indicate tiers inclusive of and above the indicated tier.\n",
     "timeDescription": "This unit process is representative of operations from 2020-2024. Pollutant species were sourced from a 2020 report. Fuel efficiency was averaged from STB R-1 data in 2024. \n",
-    "validFrom": "2020",
-    "validUntil": "2024"
+    "validFrom": "2020-01-01T00:00:00",
+    "validUntil": "2024-12-31T00:00:00"
   },
   "processType": "UNIT_PROCESS",
   "version": "01.00.000"

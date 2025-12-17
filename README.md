@@ -17,4 +17,4 @@ needs to be imported into a database containing USLCI so that default providers 
 
 | Datasts             | Version | flcac-utils | Release        |
 |---------------------|---------|-------------|----------------|
-| Class 1 U.S. Rail   | v1.0.0  | v0.2.0      | 2025 Q4, USLCI |
+| Class 1 U.S. Rail   | v1.0.0  | v0.2.2      | 2025 Q4, USLCI |
