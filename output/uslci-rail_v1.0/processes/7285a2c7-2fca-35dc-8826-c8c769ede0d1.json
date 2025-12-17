@@ -26,7 +26,7 @@
       "flow": {
         "@type": "Flow",
         "@id": "d939590b-a0d7-310c-8952-9921ed64a078",
-        "category": "Technosphere flows / 31-33: Manufacturing / 3241: Petroleum and Coal Products Manufacturing",
+        "category": "Technosphere flows/31-33: Manufacturing/3241: Petroleum and Coal Products Manufacturing",
         "name": "Diesel, at refinery"
       },
       "flowProperty": {
@@ -265,7 +265,7 @@
     },
     {
       "amount": 1.0,
-      "dqEntry": "(2;2;1;1;1)",
+      "dqEntry": "",
       "flow": {
         "@type": "Flow",
         "@id": "e9075c28-5534-3fff-b8b6-730a1db8bb06",

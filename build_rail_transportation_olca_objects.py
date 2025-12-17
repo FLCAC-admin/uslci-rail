@@ -24,6 +24,7 @@ from flcac_utils.util import extract_actors_from_process_meta, \
 from flcac_utils.generate_processes import build_flow_dict, \
         build_process_dict, write_objects, validate_exchange_data
 from flcac_utils.util import assign_year_to_meta
+from flcac_utils.commons_api import get_single_object
 
 # working directory
 working_dir = Path(__file__).parent
@@ -147,25 +148,26 @@ df_olca = pd.concat([df_olca, new_df], ignore_index=True)
 #%% Add values shared by both inputs and ref flow
 
 df_olca['ProcessCategory'] = '48-49: Transportation and Warehousing/ 4821: Rail Transportation'
-
-df_olca['Context'] = 'Technosphere flows / 48-49: Transportation and Warehousing / 4821: Rail Transportation'
-df_olca['FlowType'] = 'PRODUCT_FLOW'
+df_olca['Context'] = np.where(df_olca['reference'],
+                              'Technosphere flows / 48-49: Transportation and Warehousing / 4821: Rail Transportation',
+                              '') # don't assign context for existing flows
+df_olca['FlowType'] = np.where(df_olca['unit'] == 'kg', # proxy for elementary flow
+                               'ELEMENTARY_FLOW', 'PRODUCT_FLOW')
 df_olca['avoided_product'] = False
 df_olca['location'] = 'US'
 df_olca['Year'] = 2020
 
 # %% re-locate the fuel
 
-
+diesel = get_single_object('USLCI', 'FLOW', meta['Flows']['diesel']['FlowUUID'], auth=True)
 target2 = 'Diesel, at refinery'
-diesel_location = 'Technosphere flows / 31-33: Manufacturing / 3241: Petroleum and Coal Products Manufacturing'
-
 mask = df_olca['FlowName'].str.contains(target2, regex=False, na=False)
-df_olca.loc[mask, 'Context'] = diesel_location
+df_olca.loc[mask, 'Context'] = diesel.category
 
 
 #%% Assign exchange dqi
 df_olca['exchange_dqi'] = format_dqi_score(meta['DQI']['Flow'])
+df_olca.loc[df_olca['reference']==True, 'exchange_dqi'] = ''
 
 
 #%% Assign locations to processes
@@ -200,6 +202,7 @@ location_objs = build_location_dict(df_olca, locations)
 
 validate_exchange_data(df_olca)
 flows, new_flows = build_flow_dict(df_olca)
+flows[diesel.id] = diesel
 processes = {}
 for year in df_olca.Year.unique():
     ### *** I dont think this is relevant since we have 1 year of data
