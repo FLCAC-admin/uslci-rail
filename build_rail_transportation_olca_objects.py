@@ -218,7 +218,7 @@ for year in df_olca.Year.unique():
     processes.update(p_dict)
     
 # %% edit version number for weighted average process
-processes['7de9c230-fd0f-3478-be87-f80181132faa'].version = '01.00.001'
+processes['7de9c230-fd0f-3478-be87-f80181132faa'].version = '01.01.000'
 
 # %%
     
