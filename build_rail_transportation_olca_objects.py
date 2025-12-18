@@ -3,7 +3,6 @@ The purpose of this script is to build olca process objects that will contain
 the 2020 NEI derived rail transport data for US class 1 line haul railroads.
 
 TO-DO:
-- Finalize process metadata
 - Complete dqi in flow meta
 """
 #%% SETUP ##
@@ -218,6 +217,12 @@ for year in df_olca.Year.unique():
                                 )
     processes.update(p_dict)
     
+# %% edit version number for weighted average process
+processes['7de9c230-fd0f-3478-be87-f80181132faa'].version = '01.00.001'
+
+# %%
+    
+
 out_path = working_dir / 'output'
 out_path.mkdir(exist_ok=True)
 write_objects('rail-transport', flows, new_flows, processes,
