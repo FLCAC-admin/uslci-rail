@@ -115,13 +115,7 @@ for tier in unique_tier:
     
     # Create FlowName by modifying the commodity string
     flowName = 'Transport, rail, freight; diesel powered'
-    if tier == 'weighted average':
-        flowUUID = '73c7494d-4e93-3769-896b-8bb82f0dfccc'
-        flowName = 'Transport, rail, freight; diesel powered; weighted average'
-    # generate reference flow uuid
-    else:
-        #flowUUID = make_uuid([flowName, processName, processID])
-        flowUUID = 	'4326be78-ae8b-3446-9310-278636ee68c5'
+    flowUUID = '4326be78-ae8b-3446-9310-278636ee68c5'
 
     # Create the new row as a dictionary
     new_row = {

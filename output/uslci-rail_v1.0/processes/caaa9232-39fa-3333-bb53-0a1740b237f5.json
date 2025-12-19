@@ -268,9 +268,9 @@
       "dqEntry": "",
       "flow": {
         "@type": "Flow",
-        "@id": "0843cbcc-7c1e-3301-ada9-5c6d89ad1dff",
+        "@id": "4326be78-ae8b-3446-9310-278636ee68c5",
         "category": "Technosphere flows / 48-49: Transportation and Warehousing / 4821: Rail Transportation",
-        "name": "Transport, rail, freight; diesel powered; emissions tier 1+"
+        "name": "Transport, rail, freight; diesel powered"
       },
       "flowProperty": {
         "@type": "FlowProperty",
@@ -287,7 +287,7 @@
       }
     }
   ],
-  "lastChange": "2025-12-17T12:00:00Z",
+  "lastChange": "2025-12-19T12:00:00Z",
   "location": {
     "@type": "Location",
     "@id": "0b3b97fa-6688-3c56-88ee-4ae80ec0c3c2",
@@ -296,7 +296,7 @@
   "name": "Transport, rail, freight; diesel powered; tier 1+",
   "processDocumentation": {
     "completenessDescription": "The mass balance for this process was not calculated. Infrastructure maintenance and expansion was not allocated to this unit process. Inventory development methods are detailed in the cited 2020 NEI report. \n",
-    "creationDate": "2025-12-16T12:00:00",
+    "creationDate": "2025-12-19T12:00:00",
     "dataDocumentor": {
       "@type": "Actor",
       "@id": "38e67478-a915-43d9-ad67-e25db79a4acc",
